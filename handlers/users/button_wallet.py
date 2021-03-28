@@ -11,7 +11,7 @@ from utils.db_api.db import Db
 # Вывод сообщения при активации команды /menu. Показывает клавиатуру
 @dp.message_handler(text='💳 Кошелёк', state='*')
 async def buttonWallet(message: Message):
-    pathToImg = os.path.normpath(os.getcwd() + os.sep + '\\img\\wallet.png')
+    pathToImg = os.path.normpath(os.getcwd() + os.sep + '/img/wallet.png')
     img = open(pathToImg, 'rb')
 
     db = Db()

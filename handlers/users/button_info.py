@@ -10,7 +10,7 @@ from utils.db_api.db import Db
 # Вывод сообщения при активации команды /menu. Показывает клавиатуру
 @dp.message_handler(text='🏆 Информация', state='*')
 async def buttonInfo(message: Message):
-    pathToImg = os.path.normpath(os.getcwd() + os.sep + '\\img\\info.png')
+    pathToImg = os.path.normpath(os.getcwd() + os.sep + '/img/info.png')
     img = open(pathToImg, 'rb')
 
     db = Db()

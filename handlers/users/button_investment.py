@@ -13,7 +13,7 @@ from utils.db_api.db import Db
 # Вывод сообщения при активации команды /menu. Показывает клавиатуру
 @dp.message_handler(text='🔺 Инвестиции', state='*')
 async def buttonInvestment(message: Message):
-    pathToImg = os.path.normpath(os.getcwd() + os.sep + '\\img\\investment.png')
+    pathToImg = os.path.normpath(os.getcwd() + os.sep + '/img/investment.png')
     img = open(pathToImg, 'rb')
 
     db = Db()
