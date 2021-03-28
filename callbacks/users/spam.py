@@ -26,11 +26,12 @@ async def getAmountFromUser(message: Message):
         except:
             print('Error spam')
 
-    for admin in admins:
-        try:
-            await bot.send_message(admin, 'Текст отправлен')
-        except:
-            pass
+    for item in admins:
+        for admin in item.split():
+            try:
+                await bot.send_message(admin, 'Текст отправлен')
+            except:
+                pass
 
     state = dp.current_state(user=message.from_user.id)
     await state.set_state(StateMachine.all()[0])

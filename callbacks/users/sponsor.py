@@ -12,12 +12,13 @@ async def getAmountFromUser(message: Message):
 
     db = Db()
 
-    for admin in admins:
-        try:
-            db.updateSponsor(text)
-            await bot.send_message(admin, 'Спонсор добавлен')
-        except:
-            pass
+    for item in admins:
+        for admin in item.split():
+            try:
+                db.updateSponsor(text)
+                await bot.send_message(admin, 'Спонсор добавлен')
+            except:
+                pass
 
     state = dp.current_state(user=message.from_user.id)
     await state.set_state(StateMachine.all()[0])
