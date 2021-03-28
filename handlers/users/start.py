@@ -36,7 +36,7 @@ async def bot_start(message: types.Message):
                         await dp.bot.send_message(bossId, f'''🏆 Вы получили <b>7 руб.</b> за реферала @{message.from_user.username}''')
                         db.updateCountReferals(bossId, countReferals + 1)
                         db.updateYourVklad(bossId, your_vklad + 7)
-                
+                        
                 except:
                     pass
 
